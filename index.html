@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Phone Sale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 50px auto;
+            gap: 50px;
+            max-width: 1000px;
+        }
+        .product-image img {
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+        }
+        .product-details {
+            max-width: 500px;
+        }
+        .product-details h2 {
+            margin-top: 0;
+            color: #007BFF;
+        }
+        .price {
+            font-size: 1.8rem;
+            color: #28a745;
+            margin: 10px 0;
+        }
+        .description {
+            line-height: 1.5;
+            margin: 15px 0;
+        }
+        .quantity {
+            margin: 15px 0;
+        }
+        .quantity input {
+            width: 60px;
+            padding: 5px;
+            font-size: 1rem;
+            text-align: center;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .cart-message {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Mobile Store</header>
+
+    <div class="container">
+        <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?fit=crop&w=600&q=80" alt="Mobile Phone">
+        </div>
+        <div class="product-details">
+            <h2>SuperPhone X200</h2>
+            <div class="price">₹29,999</div>
+            <div class="description">
+                Experience the ultimate performance with SuperPhone X200. Features include:
+                <ul>
+                    <li>6.7" AMOLED Display</li>
+                    <li>Triple Camera 108MP</li>
+                    <li>5000mAh Battery</li>
+                    <li>128GB Storage, 8GB RAM</li>
+                </ul>
+            </div>
+            <div class="quantity">
+                Quantity: <input type="number" id="quantity" value="1" min="1">
+            </div>
+            <button onclick="addToCart()">Add to Cart</button>
+            <div class="cart-message" id="cartMessage"></div>
+        </div>
+    </div>
+
+    <script>
+        function addToCart() {
+            const quantity = document.getElementById('quantity').value;
+            const message = document.getElementById('cartMessage');
+            message.textContent = `Added ${quantity} item(s) to your cart!`;
+        }
+    </script>
+
+</body>
+</html>
